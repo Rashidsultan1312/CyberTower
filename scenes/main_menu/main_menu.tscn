@@ -1,0 +1,303 @@
+[gd_scene format=3 uid="uid://iyr0sj5xlld3"]
+
+[ext_resource type="Script" uid="uid://drsga0mlc81pc" path="res://scripts/main_menu/main_menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ck1nvec4ayf52" path="res://assets/sprites/bg/menu_bg.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bu13tks8mv656" path="res://assets/sprites/ui/coin.png" id="4"]
+[ext_resource type="FontFile" uid="uid://c2ue1klnyyis8" path="res://assets/fonts/Orbitron-Bold.ttf" id="5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/crystal.png" id="6"]
+
+[node name="MainMenu" type="Control" unique_id=1221136825]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="BGDark" type="ColorRect" parent="." unique_id=1350935062]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.02, 0.005, 0.05, 1)
+
+[node name="BG" type="TextureRect" parent="." unique_id=250126774]
+layout_mode = 0
+offset_left = -30.0
+offset_right = 780.0
+offset_bottom = 1534.0
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BG2" type="TextureRect" parent="." unique_id=1536882571]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 1534.0
+offset_right = 780.0
+offset_bottom = 3068.0
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Vignette" type="ColorRect" parent="." unique_id=21586571]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.2)
+
+[node name="ParticleLayer" type="CanvasLayer" parent="." unique_id=305872273]
+layer = 2
+
+[node name="ParticleHost" type="Node2D" parent="ParticleLayer" unique_id=2001692086]
+
+[node name="RisingParticles" type="CPUParticles2D" parent="ParticleLayer/ParticleHost" unique_id=845521538]
+position = Vector2(375, 1334)
+amount = 50
+lifetime = 14.0
+speed_scale = 0.5
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(400, 100)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 100.0
+scale_amount_max = 3.0
+color = Color(0, 1, 1, 0.2)
+
+[node name="GlowOrbs" type="CPUParticles2D" parent="ParticleLayer/ParticleHost" unique_id=685751964]
+position = Vector2(375, 667)
+amount = 12
+lifetime = 10.0
+speed_scale = 0.15
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(380, 680)
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+scale_amount_min = 8.0
+scale_amount_max = 22.0
+color = Color(0.5, 0.1, 1, 0.04)
+
+[node name="CyanOrbs" type="CPUParticles2D" parent="ParticleLayer/ParticleHost" unique_id=1655331964]
+position = Vector2(375, 800)
+amount = 10
+lifetime = 8.0
+speed_scale = 0.25
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(350, 500)
+direction = Vector2(0.3, -1)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+scale_amount_min = 6.0
+scale_amount_max = 16.0
+color = Color(0, 1, 1, 0.04)
+
+[node name="Sparkles" type="CPUParticles2D" parent="ParticleLayer/ParticleHost" unique_id=1713590485]
+position = Vector2(375, 300)
+amount = 35
+lifetime = 4.0
+speed_scale = 0.7
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(380, 400)
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 8)
+initial_velocity_min = 15.0
+initial_velocity_max = 50.0
+scale_amount_max = 2.5
+color = Color(0, 1, 1, 0.35)
+
+[node name="PurpleOrbs" type="CPUParticles2D" parent="ParticleLayer/ParticleHost"]
+position = Vector2(375, 667)
+amount = 8
+lifetime = 12.0
+speed_scale = 0.2
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(380, 680)
+direction = Vector2(-0.3, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 8.0
+initial_velocity_max = 20.0
+scale_amount_min = 10.0
+scale_amount_max = 25.0
+color = Color(0.8, 0.2, 1, 0.035)
+
+[node name="GoldDust" type="CPUParticles2D" parent="ParticleLayer/ParticleHost"]
+position = Vector2(375, 1334)
+amount = 15
+lifetime = 10.0
+speed_scale = 0.4
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(400, 50)
+direction = Vector2(0, -1)
+spread = 40.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 70.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(1, 0.85, 0, 0.15)
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=921519376]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = -20.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="CoinIcon" type="TextureRect" parent="TopBar" unique_id=1036959915]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CoinLabel" type="Label" parent="TopBar" unique_id=2068930813]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Spacer" type="Control" parent="TopBar" unique_id=1198464657]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="CrystalIcon" type="TextureRect" parent="TopBar"]
+layout_mode = 2
+custom_minimum_size = Vector2(30, 30)
+texture = ExtResource("6")
+expand_mode = 3
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="CrystalLabel" type="Label" parent="TopBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "0"
+
+[node name="Logo" type="VBoxContainer" parent="." unique_id=1510336541]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 160.0
+offset_right = 675.0
+offset_bottom = 420.0
+pivot_offset = Vector2(300, 130)
+mouse_filter = 2
+theme_override_constants/separation = -8
+
+[node name="Title" type="Label" parent="Logo" unique_id=169108528]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 52
+text = "CYBER TOWER"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Logo" unique_id=1307530190]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.2, 1, 0.85)
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 28
+text = "QUANTUM RUSH"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=2085620666]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -60.0
+offset_right = 170.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="PlayBtn" type="Button" parent="Buttons" unique_id=655395568]
+custom_minimum_size = Vector2(340, 76)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "PLAY"
+
+[node name="ShopBtn" type="Button" parent="Buttons" unique_id=764422128]
+custom_minimum_size = Vector2(340, 66)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "SHOP"
+
+[node name="MissionsBtn" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(340, 66)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "MISSIONS"
+
+[node name="AchievementsBtn" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(340, 66)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "ACHIEVEMENTS"
+
+[node name="PuzzleBtn" type="Button" parent="Buttons" unique_id=1725407791]
+custom_minimum_size = Vector2(340, 66)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "PUZZLES"
+
+[node name="SettingsBtn" type="Button" parent="Buttons" unique_id=1057859258]
+custom_minimum_size = Vector2(340, 66)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "SETTINGS"
+
+[connection signal="pressed" from="Buttons/PlayBtn" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/ShopBtn" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Buttons/MissionsBtn" to="." method="_on_missions_pressed"]
+[connection signal="pressed" from="Buttons/AchievementsBtn" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="Buttons/PuzzleBtn" to="." method="_on_puzzle_pressed"]
+[connection signal="pressed" from="Buttons/SettingsBtn" to="." method="_on_settings_pressed"]

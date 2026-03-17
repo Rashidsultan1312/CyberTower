@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/overlays/daily_reward.gd" id="1"]
+[ext_resource type="FontFile" path="res://assets/fonts/Comfortaa-Bold.ttf" id="2"]
+
+[node name="DailyReward" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -220.0
+offset_right = 250.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Title" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 26
+text = "DAILY REWARD"
+horizontal_alignment = 1
+
+[node name="DayLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 0.9)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 22
+text = "DAY 1 / 7"
+horizontal_alignment = 1
+
+[node name="RewardLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.9)
+theme_override_font_sizes/font_size = 26
+text = "20 coins"
+horizontal_alignment = 1
+
+[node name="ClaimBtn" type="Button" parent="Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 70)
+theme_override_font_sizes/font_size = 28
+text = "CLAIM"
+
+[connection signal="pressed" from="Panel/VBox/ClaimBtn" to="." method="_on_claim_pressed"]

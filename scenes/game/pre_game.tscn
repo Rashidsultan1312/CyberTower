@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/pre_game.gd" id="1"]
+[ext_resource type="FontFile" path="res://assets/fonts/Orbitron-Bold.ttf" id="2"]
+
+[node name="PreGame" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -400.0
+offset_right = 320.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 28
+text = "POWER-UPS"
+horizontal_alignment = 1
+
+[node name="SlotsBox" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 350)
+
+[node name="Items" type="VBoxContainer" parent="Panel/VBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="HButtons" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="SkipBtn" type="Button" parent="Panel/VBox/HButtons"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 60)
+theme_override_font_sizes/font_size = 22
+text = "SKIP"
+
+[node name="StartBtn" type="Button" parent="Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 70)
+theme_override_font_sizes/font_size = 28
+text = "START"
+
+[connection signal="pressed" from="Panel/VBox/HButtons/SkipBtn" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="Panel/VBox/StartBtn" to="." method="_on_start_pressed"]
